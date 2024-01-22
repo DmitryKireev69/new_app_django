@@ -1,0 +1,27 @@
+Первые 50 минут 
+Для проекта создаем вируально окружение 
+python -m venv venv
+активаруем 
+venv\Scripts\activate
+устанавилваем django
+pip install django==5
+pip list проверка установленных библеотек
+создаем приложение
+django-admin startproject app
+Выбираем в настройках интерпритатора виртуально окружение нашего проекта
+запускаем сервер 
+python manage.py runserver
+
+с 1:03:01
+Создание проекта 
+python manage.py startapp main
+Схема работы модели MTV
+1.в файле views пишем функции для отрисовки страницы 
+def index(request):
+    context = {
+        'title': 'Home',
+        'content': 'Главная страница'
+    }
+    return render(request, 'main/index.html', context)
+2. Далее эти функции мы передаем в urls 
+3. создаем папку templates в ней папку с названием модуля и в ней уже html файл
