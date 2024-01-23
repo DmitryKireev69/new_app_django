@@ -25,3 +25,14 @@ def index(request):
     return render(request, 'main/index.html', context)
 2. Далее эти функции мы передаем в urls 
 3. создаем папку templates в ней папку с названием модуля и в ней уже html файл
+c 3:15 Миграции
+1. makemigrations - перевести фаилы таблиц и описанных класов в миграции
+2. python manage.py migrate - из файлы миграции создать таблицы в бд
+class Categories(models.Model):
+    name = models.CharField(max_length=150, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
+
+    class Meta:
+        db_table = 'category'
+c 3:36 Админка 
+1. createsuperuser
